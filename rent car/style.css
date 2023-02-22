@@ -11,7 +11,7 @@
     font-family: 'Comfortaa', cursive;
 }
 :root{
-    --main-color: #e9e9f1;
+    --main-color: #4141ec;
     --text-color: #000000bb;
 }
 
@@ -46,20 +46,20 @@ header{
 .logo img{
     width: 60px;
 }
-.bar{
+.navbar{
     display: flex;
 }
-.bar li{
+.navbar li{
     position: relative;
 }
-.bar a{
+.navbar a{
     font-size: 1rem;
     padding: 10px 20px;
     color: var(--text-color);
     font-weight: 500;
 
 }
-.bar a::after{
+.navbar a::after{
     content: "";
     width: 100%;
     height: 3px;
@@ -84,6 +84,15 @@ header{
     color: white;
     border-radius: 0.5rem;
 }
+
+.header-btn .help:hover{
+    background: rgb(223, 78, 78);
+}
+.header-btn .call:hover{
+    background: rgb(223, 78, 78);
+}
+
+
 .home{
     width: 100%;
     min-height:100vh;
@@ -91,7 +100,7 @@ header{
     background: url(bmw.png);
     background-repeat: no-repeat;
     background-position: center right;
-    background-size: 60%;
+    background-size: 50%;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(2,1fr);
@@ -183,4 +192,118 @@ header{
     font-weight: 500;
     color: #4141ec;
     text-transform: uppercase;
+}
+.about-text .btn{
+    padding: 10px 20px;
+    background: #4141ec;
+    color: white;
+    border-radius: 0.5rem;
+}
+.about-text .btn:hover{
+    background: rgb(223, 78, 78);
+}
+
+
+/*Responsive*/
+
+@media (max-width:991px){
+    header{
+        padding: 18px 40px;
+    }
+    section{
+        padding: 50px 40px;
+    }
+}
+@media (max-width:881px){
+    .home{
+        background-position: left;
+    }
+}
+@media (max-width:768px){
+    header{
+        padding: 11px 40px;
+    }
+    #menu-icon{
+        display: initial;
+    }
+    .text h1{
+        font-size: 2.5rem;
+    }
+    .home{
+        grid-template-columns: 1fr;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background:white;
+        box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+        transition: 0.2s ease;
+        text-align: left;
+    }
+    .navbar.active {
+        top: 100%;
+    }
+    .navbar a{
+        padding: 1rem;
+        border-left: 2px solid #4141ec;
+        margin: 1rem;
+        display: block;
+    }
+    .navbar a:hover{
+        color: white;
+        background: rgb(223, 78, 78);
+        border: none;
+    }
+    .navbar a::after {
+        display: none;
+    }
+    .heading span{
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .heading h1{
+        font-size: 1.3rem;
+    }
+    .about-container{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-img{
+        padding: 1rem;
+        order: 2;
+    }
+}
+
+@media (max-width:350px){
+    header{
+        padding: 6px 14px;
+    }
+    .logo img{
+        width: 30px;
+    }
+    section{
+        padding: 50px 14px;
+    }
+    .header-btn .call {
+        padding: 7px 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .text h1{
+        font-size: 2rem;
+    }
+    .services-container{
+        grid-template-columns: repeat(auto-fit,minmax(254px, auto));
+    }
+}
+
+@media (max-width:1160px){
+    .help{
+        display: none;
+    }
+
 }
